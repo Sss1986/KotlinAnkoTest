@@ -14,6 +14,10 @@ class Main22Activity : AppCompatActivity() {
         val lambda = {
             left : Int , right : Int -> left + right
         }
+        var items = ArrayList<String>()
+        for (i in 0..99){
+            items.add("明天会更好")
+        }
         verticalLayout {
             val text = textView("这是第二个activity"){
                 textSize = 24f
@@ -28,8 +32,9 @@ class Main22Activity : AppCompatActivity() {
                 gravity = 17
             }
             button.onClick {
-                toast("${lambda(10,20)}")
+                startActivity<Main3Activity>()
             }
+
         }
     }
 
